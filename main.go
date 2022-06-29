@@ -2,12 +2,17 @@ package main
 
 import (
 	"fmt"
+	"web-platform/logging"
 )
 
-func writeMessage() {
+func writeMessage(logger logging.Logger) {
 	fmt.Println("Hello, Platform")
+	logger.Info("Hello, Platform")
+
 }
 
 func main() {
-	writeMessage()
+	var logger logging.Logger = logging.NewDefaultLogger(logging.Information)
+	writeMessage(logger)
+
 }
